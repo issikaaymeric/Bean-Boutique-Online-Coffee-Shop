@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Bean Boutique</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/jpeg" href="img/coffe_logo.jpeg">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo-img">
+            <img src="img/coffe_logo.jpeg" alt="Website Logo">
+            <h2>Bean Boutique</h2>
+        </div>
+        <ul>
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="index.html#brew_equipements"><i class="fa-solid fa-blender"></i> Equipment</a></li>
+            <li><a href="index.html#events"><i class="fa-solid fa-calendar"></i> Events</a></li>
+            <li><a href="index.html#about"><i class="fa-solid fa-mug-saucer"></i> About Us</a></li>
+            <li><a href="index.html#footer"><i class="fa-solid fa-phone"></i> Contact</a></li>
+            <li><a href="cart_page.html"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+        </ul>
+    </nav>
+
+    <!-- Cart Page -->
+    <section class="cart-page" id="cart-page" style="display: block;">
+        <div class="cart-header">
+            <h1><i class="fa-solid fa-cart-shopping"></i> Shopping Cart</h1>
+            <p>Review your items before checkout</p>
+        </div>
+
+        <div id="cart-content">
+            <!-- Cart items will be dynamically added here -->
+            <div style="text-align: center; padding: 3rem;">
+                <i class="fa-solid fa-spinner fa-spin" style="font-size: 3rem; color: #6d4c41;"></i>
+                <p style="margin-top: 1rem; color: #5d4037;">Loading your cart...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Bean Boutique</h3>
+                <p>Your premium destination for artisanal coffee and brewing excellence.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+                    <li><a href="index.html#about"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="cart_page.html"><i class="fa-solid fa-chevron-right"></i> Cart</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fa-solid fa-location-dot"></i> 123 Coffee Street, Brew City</p>
+                <p><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fa-solid fa-envelope"></i> hello@beanboutique.com</p>
+            </div>
+        </div>
+        
+        <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Bean Boutique Coffee Shop. All Rights Reserved.</p>
+            <p>Crafted with <i class="fa-solid fa-heart"></i> and Coffee</p>
+        </div>
+    </footer>
+
+    <!-- Load JavaScript at the end -->
+    <script src="scripts.js"></script>
+    
+    <!-- Debug Script - Remove after testing -->
+    <script>
+        // Check if cart is loading
+        console.log('Cart page loaded');
+        console.log('Cart data:', localStorage.getItem('coffeeCart'));
+        
+        // Force render after a short delay
+        setTimeout(() => {
+            if (typeof renderCart === 'function') {
+                console.log('Rendering cart...');
+                renderCart();
+            } else {
+                console.error('renderCart function not found!');
+            }
+        }, 100);
+    </script>
+</body>
+</html>

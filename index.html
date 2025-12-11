@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Boutique Coffee Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+    <link rel="icon" type="image/jpeg" href="img/coffe_logo.jpeg">
+    <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <!-- Home Page -->
+
+        <!-- Welcome Popup Modal -->
+<div class="popup-overlay hidden" id="welcomePopup">
+    <div class="popup-modal">
+        <button class="popup-close" id="closePopup" aria-label="Close popup">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        
+        <div class="popup-header">
+            <h2>Welcome to Bean Boutique!</h2>
+            <span class="popup-discount">🎉 Get 15% OFF 🎉</span>
+        </div>
+        
+        <div class="popup-body">
+            <p>Sign up for our newsletter and get <strong>15% off</strong> your first order! Plus, be the first to know about new coffee arrivals, exclusive deals, and brewing tips.</p>
+            
+            <form class="popup-form" id="signupForm">
+                <div class="form-group">
+                    <label for="signup-name">
+                        <i class="fa-solid fa-user"></i> Your Name
+                    </label>
+                    <input 
+                        type="text" 
+                        id="signup-name" 
+                        name="name" 
+                        placeholder="Enter your name" 
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="signup-email">
+                        <i class="fa-solid fa-envelope"></i> Email Address
+                    </label>
+                    <input 
+                        type="email" 
+                        id="signup-email" 
+                        name="email" 
+                        placeholder="your@email.com" 
+                        required
+                    >
+                </div>
+                
+                <button type="submit" class="popup-submit">
+                    <i class="fa-solid fa-gift"></i> Get My 15% Discount
+                </button>
+            </form>
+        </div>
+        
+        <div class="popup-footer">
+            <p>We respect your privacy. Unsubscribe anytime.</p>
+            <button class="popup-skip" id="skipPopup">No thanks, I'll pay full price</button>
+        </div>
+    </div>
+</div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo-img">
+            <img src="img/coffe_logo.jpeg" alt="Website Logo">
+            <h2>Bean Boutique</h2>
+        </div>
+        <ul>
+            <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+             <li><a href="#brew_equipements"> Equipements</a></li>
+             <li><a href="#events">Events</a></li>
+            <li><a href="#about"><i class="fa-solid fa-mug-saucer"></i> About Us</a></li>
+            <li><a href="#footer"><i class="fa-solid fa-phone"></i> Contact</a></li>
+            <li><a href="cart_page.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Welcome section -->
+     <section class="welcome_poster">
+        <div class="wel_msg">
+            <h1>Welcome to our Coffee Shop </h1>
+        </div>
+        <div class="wel_img">
+            <img src="img/coffe_shop.jpg" alt="#">
+        </div>
+    </section>
+
+    <!-- Coffee Section -->
+     <h1 style="font-family:'Playfair Display', serif;">Our Selection</h1>
+     <main class="coffee_card">
+        <div class="coffe_cart">
+            <div class="cart_img">
+                <img src="img/Americano.jpeg" alt="Americano">
+            </div>
+            <div class="decrip_cart">
+                <p><b>Name: </b>Americano</p>
+                <p><b>Description: </b> A popular coffee drink made by adding hot water to espresso, creating a larger, milder coffee similar to drip coffee but with espresso's distinct flavor.</p>
+                <p><b>Price: </b>$ 35.40</p>
+            </div>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="coffe_cart">
+            <div class="cart_img">
+                <img src="img/espresso.jpeg" alt="Espresso">
+            </div>
+            <div class="decrip_cart">
+                <p><b>Name: </b>Espresso</p>
+                <p><b>Description: </b>A concentrated coffee made by forcing hot water under high pressure through finely-ground coffee beans. </p>
+                <p><b>Price: </b>$ 23.15</p>
+            </div>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="coffe_cart">
+            <div class="cart_img">
+                <img src="img/latte.jpeg" alt="Latte Coffee">
+            </div>
+            <div class="decrip_cart">
+                <p><b>Name: </b>Latte</p>
+                <p><b>Description: </b>An espresso-based coffee drink of Italian origin that consists of one or more shots of espresso, a large amount of steamed milk, and a thin, final layer of frothed milk (microfoam) on top.</p>
+                <p><b>Price: </b>$ 19.99</p>
+            </div>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="coffe_cart">
+            <div class="cart_img">
+                <img src="img/flat_white.jpeg" alt="Flat White">
+            </div>
+            <div class="decrip_cart">
+                <p><b>Name: </b>Flat White</p>
+                <p><b>Description: </b> A strong, espresso-based coffee with velvety, microfoamed milk, originating from Australia/New Zealand.</p>
+                <p><b>Price: </b>$ 8.20</p>
+            </div>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="coffe_cart">
+            <div class="cart_img">
+                <img src="img/cortado.jpeg" alt="Cortado">
+            </div>
+            <div class="decrip_cart">
+                <p><b>Name: </b>Cortado</p>
+                <p><b>Description: </b>A Spanish espresso drink made by "cutting" espresso with an equal amount of warm, steamed milk.</p>
+                <p><b>Price: </b>$ 16.50</p>
+            </div>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="coffe_cart">
+            <div class="cart_img">
+                <img src="img/cappucinno.jpeg" alt="Cappucinno">
+            </div>
+            <div class="decrip_cart">
+                <p><b>Name: </b>Cappuccino</p>
+                <p><b>Description: </b> An Italian espresso-based coffee drink traditionally made with equal parts espresso, steamed milk, and milk foam. It is known for its balanced, creamy, and rich flavor, with a thick layer of foam on top.</p>
+                <p><b>Price: </b>$ 7.90</p>
+            </div>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="coffe_cart">
+            <div class="cart_img">
+                <img src="img/cafe_au_lait.jpeg" alt="Caffe au Lait">
+            </div>
+            <div class="decrip_cart">
+                <p><b>Name: </b>Caffé au Lait</p>
+                <p><b>Description: </b> A classic French coffee drink meaning "coffee with milk," traditionally made with equal parts strong brewed coffee (often French press).</p>
+                <p><b>Price: </b>$ 9.99</p>
+            </div>
+            <button>Add to Cart</button>
+        </div>
+
+
+        <div class="coffe_cart">
+            <div class="cart_img">
+                <img src="img/caffe_mocha.jpeg" alt="Caffe Mocha">
+            </div>
+            <div class="decrip_cart">
+                <p><b>Name: </b>Caffè Mocha</p>
+                <p><b>Description: </b>A rich, chocolate-flavored coffee drink made with espresso, steamed milk, and chocolate syrup or cocoa powder</p>
+                <p><b>Price: </b>$ 10.00</p>
+            </div>
+            <button>Add to Cart</button>
+        </div>
+
+
+        <div class="coffe_cart">
+            <div class="cart_img">
+                <img src="img/caffe_macchiato.jpeg" alt="Caffe Machiato">
+            </div>
+            <div class="decrip_cart">
+                <p><b>Name: </b>Caffe Macchiato</p>
+                <p><b>Description: </b>A classic Italian coffee made with a shot of espresso "stained" or "marked" with a small dollop of foamed or steamed milk</p>
+                <p><b>Price: </b>$ 35.00</p>
+            </div>
+            <button>Add to Cart</button>
+        </div>
+     </main>
+
+    <!-- Brewing Equipement -->
+     <h1 style="font-family:'Playfair Display', serif;">Brewing Equipements</h1>
+     <section class="brew_equipments" id="brew_equipements">
+        <div class="equip_cart">
+            <div class="equip_img">
+                <img src="img/brew_equip0.jpeg">
+            </div>
+            <div class="decrip_cart">
+                <p><b>Name: </b>Milk Frother</p>
+                <p><b>Description: </b>Used to create silky microfoam for lattes, cappuccinos, and flat whites. Adds café-quality texture to milk-based drinks.</p>
+                <p><b>Price: </b>$ 130</p>
+                <button>Add</button>
+            </div>
+            
+        </div>
+
+        <div class="equip_cart">
+            <div class="equip_img">
+                <img src="img/brew_equip1.jpeg">
+            </div>
+            <div class="decrip_cart">
+                <p><b>Name: </b>Aeropress</p>
+                <p><b>Description: </b>A fast, portable brewer that uses immersion and gentle pressure to produce a smooth, low-acidity cup. Very versatile — can brew espresso-style shots, americanos, and filter coffee.</p>
+                <p><b>Price: </b>$ 140</p>
+                <button>Add</button>
+            </div>
+        </div>
+
+           
+        <div class="equip_cart">
+            <div class="equip_img">
+                <img src="img/brew_equip2.jpeg">
+            </div>
+            <div class="decrip_cart">
+                <p><b>Name: </b>Espresso Machine</p>
+                <p><b>Description: </b>A high-pressure machine that forces hot water through finely ground coffee to create an intense, concentrated shot with a signature crema layer. Great for lattes, cappuccinos, macchiatos, and more.</p>
+                <p><b>Price: </b>$ 78</p>
+                <button>Add</button>
+            </div>
+        </div>
+
+            
+        <div class="equip_cart">
+            <div class="equip_img">
+                <img src="img/brew_equip3.jpeg">
+            </div>
+            <div class="decrip_cart">
+                <p><b>Name: </b>Philips 3200 Series Fully Automatic Espresso Machine</p>
+                <p><b>Description: </b>A fully automatic espresso maker with an intuitive touch display. It lets you brew espresso, cappuccino, latte, and americano with one touch. Features include a built-in ceramic grinder, milk frother, adjustable aroma strength, and removable water tank for easy cleaning.</p>
+                <p><b>Price: </b>$ 120</p>
+                <button>Add</button>
+            </div>
+        </div>
+
+             
+        <div class="equip_cart">
+            <div class="equip_img">
+                <img src="img/brew_equip4.jpeg">
+            </div>
+            <div class="decrip_cart">
+                <p><b>Name: </b>Brew Maker</p>
+                <p><b>Description: </b>A device that slowly brews coffee in cold water for 12–24 hours, producing a smooth, sweet, and low-acidity drink. Best for iced coffee lovers.</p>
+                <p><b>Price: </b>$ 100</p>
+                <button>Add</button>
+            </div>
+        </div>
+
+           
+        <div class="equip_cart">
+            <div class="equip_img">
+                <img src="img/brew_equip5.jpeg">
+            </div>
+            <div class="decrip_cart">
+                <p><b>Name: </b>Moka Pot</p>
+                <p><b>Description: </b>A stovetop coffee maker that brews strong, rich coffee using steam pressure. Often called "stovetop espresso," it creates a bold and flavorful cup without needing an expensive espresso machine.</p>
+                <p><b>Price: </b>$ 299</p>
+                <button>Add</button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Events and Workshops -->
+     <h1 style="font-family:'Playfair Display', serif;">Upcoming Events</h1>
+     <section class="events" id="events">
+        <div class="event_img">
+            <img src="img/event_img.jpeg">
+        </div>
+
+        <div class="events_info">
+            <h1>
+                World of Coffee Dubai
+            </h1>
+
+            <h2>
+                Sun Jan 18th 2026 - Tue 20th (GMT)
+            </h2>
+
+            <p style="font-family: 'Times New Roman', Times, serif;">
+                <b style="font-size: 30px;">N</b>ow celebrating its 5th edition, World of Coffee Dubai 2026 is the Middle East’s premier platform for the specialty coffee community.
+
+                Designed to connect coffee producers, manufacturers, retailers, traders, and passionate industry leaders,
+
+                #WOCDubai brings together the best of the UAE and the wider region’s fast-growing coffee scene.
+
+                Whether you’re looking to expand your business, discover the latest trends,
+
+                or break into the Middle East’s booming coffee industry,
+
+                WOC Dubai offers unparalleled opportunities.
+
+                Experience a vibrant trade show floor and dynamic features including the Roaster Village,
+
+                UAE National Championships, SCA Community Lounge,
+
+                Best New Product Competition & Display,
+
+                inspiring lectures, and much more.
+
+                Join us in shaping the future of coffee — explore more and be part of this exciting journey.
+            </p>
+        </div>
+     </section>
+
+     <!-- About Section -->
+<section class="about-section" id="about">
+    <div class="about-us">
+    <h1 style="font-family:'Playfair Display', serif;">About us</h1>
+        <h3 style="font-family:'Playfair Display', serif;">Our Story</h3>
+                <p style="font-family: 'Times New Roman', Times, serif;">Bean Boutique was born from a passion for exceptional coffee and a desire to create a welcoming space where coffee lovers could gather, connect, and enjoy the finest brews.</p>
+                <p style="font-family: 'Times New Roman', Times, serif;">We source our beans directly from sustainable farms around the world, ensuring every cup not only tastes incredible but also supports the communities that grow it.</p>
+                <p style="font-family: 'Times New Roman', Times, serif;">Our expert baristas are trained in the art and science of coffee making, bringing years of experience to every drink they craft. Whether you prefer a classic espresso or an innovative specialty blend, we're dedicated to perfecting your coffee experience.</p>
+   </div>
+    <div class="map-container">
+        <h3 style="font-family:'Playfair Display', serif;">Our Location</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7944.836343932648!2d-3.9782277841448317!3d5.3529786000788695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1ebb88140d8b3%3A0xc984a6c4ef356e7!2sAFRICAN%20VISION%20INTERNATIONAL%20UNIVERSITY!5e0!3m2!1sen!2sci!4v1765468851071!5m2!1sen!2sci"
+             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</section>
+
+    <!-- Footer -->
+<footer id="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>About Bean Boutique</h3>
+            <p>Your premium destination for artisanal coffee and brewing excellence. We source the finest beans from around the world to bring you an exceptional coffee experience.</p>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Our Story</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Coffee Menu</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Brewing Guides</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Contact Info</h3>
+            <p><i class="fa-solid fa-location-dot"></i> 123 Coffee Street, Brew City, BC 12345</p>
+            <p><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</p>
+            <p><i class="fa-solid fa-envelope"></i> hello@beanboutique.com</p>
+        </div>
+    </div>
+    
+    <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2024 Bean Boutique Coffee Shop. All Rights Reserved.</p>
+        <p>Crafted with <i class="fa-solid fa-heart"></i> and Coffee</p>
+    </div>
+</footer>
+    
+</body>
+</html>
