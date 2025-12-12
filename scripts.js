@@ -171,7 +171,7 @@ function renderCart() {
                             <div class="cart-item-name">${item.name}</div>
                             <div class="cart-item-description">${item.description}</div>
                             <div class="cart-item-price">${item.price.toFixed(2)} each</div>
-                            <span class="item-type-badge">${item.type === 'coffee' ? '☕ Coffee' : '🔧 Equipment'}</span>
+                            <span class="item-type-badge">${item.type === 'coffee' ? '☕ Coffee' :}</span>
                         </div>
                         <div class="cart-item-actions">
                             <div class="quantity-controls">
@@ -187,7 +187,7 @@ function renderCart() {
                                 Subtotal: ${(item.price * item.quantity).toFixed(2)}
                             </div>
                             <button class="remove-btn" onclick="removeFromCart('${itemId}')" type="button">
-                                <i class="fa-solid fa-trash"></i> Remove
+                                <i class="fa-solid fa-trash"></i>
                             </button>
                         </div>
                     </div>
@@ -404,4 +404,5 @@ function resetWelcomePopup() {
     localStorage.removeItem('userSignup');
     location.reload();
 }
+
 document.head.appendChild(style);
