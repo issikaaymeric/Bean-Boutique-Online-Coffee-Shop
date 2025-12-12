@@ -171,7 +171,7 @@ function renderCart() {
                             <div class="cart-item-name">${item.name}</div>
                             <div class="cart-item-description">${item.description}</div>
                             <div class="cart-item-price">${item.price.toFixed(2)} each</div>
-                            <span class="item-type-badge">${item.type === 'coffee' ? '☕ Coffee' :}</span>
+                            <span class="item-type-badge">${item.type === 'coffee' ? '☕ Coffee' : '🔧 Equipment'}</span>
                         </div>
                         <div class="cart-item-actions">
                             <div class="quantity-controls">
@@ -386,7 +386,7 @@ style.textContent = `
             // Close popup after 5 seconds
             setTimeout(() => {
                 closePopup();
-            }, 10000);
+            }, 5000);
         });
     }
     
@@ -404,6 +404,4 @@ function resetWelcomePopup() {
     localStorage.removeItem('userSignup');
     location.reload();
 }
-
 document.head.appendChild(style);
-
