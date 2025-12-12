@@ -386,7 +386,7 @@ style.textContent = `
             // Close popup after 5 seconds
             setTimeout(() => {
                 closePopup();
-            }, 5000);
+            }, 10000);
         });
     }
     
@@ -406,3 +406,4 @@ function resetWelcomePopup() {
 }
 
 document.head.appendChild(style);
+
