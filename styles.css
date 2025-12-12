@@ -1,4 +1,3 @@
-/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -16,9 +15,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ---------------------------- */
-/* POPUP OVERLAY & ANIMATION    */
-/* ---------------------------- */
+/* Popup & Animation*/
 
 .popup-overlay {
     position: fixed;
@@ -43,9 +40,9 @@ body {
     visibility: hidden;
 }
 
-/* ---------------------------- */
-/* POPUP MODAL                  */
-/* ---------------------------- */
+
+/* Pupop Modal*/
+
 
 .popup-modal {
     background: #ffffff;
@@ -70,9 +67,9 @@ body {
     }
 }
 
-/* ---------------------------- */
-/* CLOSE BUTTON                 */
-/* ---------------------------- */
+
+/* Close Button  */
+
 
 .popup-close {
     position: absolute;
@@ -91,9 +88,8 @@ body {
     background: #ddd;
 }
 
-/* ---------------------------- */
-/* HEADER                       */
-/* ---------------------------- */
+/* Header */
+ 
 
 .popup-header h2 {
     font-size: 1.8rem;
@@ -115,9 +111,8 @@ body {
     margin: 8px auto 0 auto;
 }
 
-/* ---------------------------- */
-/* BODY TEXT                    */
-/* ---------------------------- */
+
+/* Body Text  */
 
 .popup-body p {
     margin-top: 15px;
@@ -126,9 +121,9 @@ body {
     line-height: 1.5;
 }
 
-/* ---------------------------- */
-/* FORM                         */
-/* ---------------------------- */
+
+/* Form*/
+
 
 .popup-form {
     margin-top: 20px;
@@ -164,9 +159,7 @@ body {
     outline: none;
 }
 
-/* ---------------------------- */
-/* SUBMIT BUTTON                */
-/* ---------------------------- */
+/* Submit Button */
 
 .popup-submit {
     width: 100%;
@@ -186,9 +179,7 @@ body {
     background: #6d4c2a;
 }
 
-/* ---------------------------- */
-/* FOOTER                       */
-/* ---------------------------- */
+/* Footer */
 
 .popup-footer {
     margin-top: 20px;
@@ -213,20 +204,6 @@ body {
 
 .popup-skip:hover {
     color: #6d4c2a;
-}
-
-/* ---------------------------- */
-/* RESPONSIVE DESIGN            */
-/* ---------------------------- */
-
-@media (max-width: 480px) {
-    .popup-modal {
-        padding: 20px;
-    }
-
-    .popup-header h2 {
-        font-size: 1.5rem;
-    }
 }
 
 
@@ -1095,6 +1072,14 @@ footer::before {
         max-width: 450px;
         height: auto;
     }
+
+    .popup-modal {
+        padding: 20px;
+    }
+
+    .popup-header h2 {
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1136,5 +1121,33 @@ footer::before {
         width: 100%;
         max-width: 450px;
         height: auto;
+    }
+
+    .popup-modal {
+        padding: 20px;
+    }
+
+    .popup-header h2 {
+        font-size: 1.5rem;
+    }
+
+}
+
+@media (max-width: 360px) {
+    .quantity-btn {
+        width: 28px;
+        height: 28px;
+    }
+
+    .quantity-display {
+        width: 30px;
+    }
+
+    .cart-item-name {
+        font-size: 1.2rem;
+    }
+
+    .popup-header h2 {
+        font-size: 1.3rem;
     }
 }
