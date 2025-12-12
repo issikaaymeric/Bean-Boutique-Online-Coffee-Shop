@@ -400,12 +400,40 @@ style.textContent = `
     });
 })();
 
-
 // Optional: Function to reset popup (for testing)
 function resetWelcomePopup() {
-    localStorage.removeItem('hasSeenWelcomePopup');
     localStorage.removeItem('userSignup');
     location.reload();
-}
-document.head.appendChild(style);
 
+}
+
+
+// TEST: Popup functionality
+console.log('Testing popup...');
+
+setTimeout(() => {
+    const popup = document.getElementById('welcomePopup');
+    console.log('Popup element found:', popup);
+    
+    if (popup) {
+        console.log('Removing hidden class...');
+        popup.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        
+        // Close buttons
+        document.getElementById('closePopup')?.addEventListener('click', () => {
+            console.log('Close button clicked');
+            popup.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+        
+        document.getElementById('skipPopup')?.addEventListener('click', () => {
+            console.log('Skip button clicked');
+            popup.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+    } else {
+        console.error('❌ Popup element NOT found! Did you add the HTML?');
+    }
+}, 1000);
+document.head.appendChild(style);
