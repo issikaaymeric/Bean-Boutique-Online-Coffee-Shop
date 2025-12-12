@@ -1119,8 +1119,9 @@ footer::before {
     .about-us,
     .map-container iframe {
         width: 100%;
-        max-width: 450px;
+        max-width: 400px;
         height: auto;
+        font-size: 12px;
     }
 
     .popup-modal {
@@ -1151,3 +1152,4 @@ footer::before {
         font-size: 1.3rem;
     }
 }
+
