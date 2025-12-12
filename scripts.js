@@ -307,11 +307,14 @@ style.textContent = `
     const skipBtn = document.getElementById('skipPopup');
     const signupForm = document.getElementById('signupForm');
     
-    // Check if user has seen the popup before
-    const hasSeenPopup = localStorage.getItem('hasSeenWelcomePopup');
+    // Only run if popup exists (on index.html only)
+    if (!popup) return;
     
-    // Show popup only on first visit (after 1 second delay)
-    if (!hasSeenPopup) {
+    // Check if user has already signed up
+    const userSignup = localStorage.getItem('userSignup');
+    
+    // Show popup after 1 second delay EVERY TIME (unless already signed up)
+    if (!userSignup) {
         setTimeout(() => {
             popup.classList.remove('hidden');
             document.body.style.overflow = 'hidden'; // Prevent scrolling
@@ -322,7 +325,6 @@ style.textContent = `
     function closePopup() {
         popup.classList.add('hidden');
         document.body.style.overflow = 'auto'; // Re-enable scrolling
-        localStorage.setItem('hasSeenWelcomePopup', 'true');
     }
     
     // Close button click
@@ -336,13 +338,11 @@ style.textContent = `
     }
     
     // Close on overlay click (outside modal)
-    if (popup) {
-        popup.addEventListener('click', (e) => {
-            if (e.target === popup) {
-                closePopup();
-            }
-        });
-    }
+    popup.addEventListener('click', (e) => {
+        if (e.target === popup) {
+            closePopup();
+        }
+    });
     
     // Handle form submission
     if (signupForm) {
@@ -352,7 +352,7 @@ style.textContent = `
             const name = document.getElementById('signup-name').value;
             const email = document.getElementById('signup-email').value;
             
-            // Save signup info (in a real app, you'd send this to a server)
+            // Save signup info (this prevents popup from showing again)
             localStorage.setItem('userSignup', JSON.stringify({
                 name: name,
                 email: email,
@@ -380,8 +380,10 @@ style.textContent = `
                 </div>
             `;
             
-            // Show notification
-            showNotification(`🎉 Welcome ${name}! Your discount code is WELCOME15`);
+            // Show notification if function exists
+            if (typeof showNotification === 'function') {
+                showNotification(`🎉 Welcome ${name}! Your discount code is WELCOME15`);
+            }
             
             // Close popup after 5 seconds
             setTimeout(() => {
@@ -398,6 +400,7 @@ style.textContent = `
     });
 })();
 
+
 // Optional: Function to reset popup (for testing)
 function resetWelcomePopup() {
     localStorage.removeItem('hasSeenWelcomePopup');
@@ -405,3 +408,4 @@ function resetWelcomePopup() {
     location.reload();
 }
 document.head.appendChild(style);
+
